@@ -1,0 +1,25 @@
+Package: MyPackage
+Title: One-line Title in Title Case
+Version: 0.99.0
+Authors@R: c(
+    person("Levi", "Waldron", email = "lwaldron.research@gmail.com",
+        role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2725-0694")))
+Description: One paragraph describing what the package does, written in full
+    sentences. BiocCheck expects at least three sentences here. Replace this
+    text, the title, the authors, the biocViews and the package name before
+    the first commit.
+License: Artistic-2.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+biocViews: Software, Infrastructure
+Depends: R (>= 4.6.0)
+Suggests:
+    BiocStyle,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+URL: https://github.com/waldronlab/MyPackage
+BugReports: https://github.com/waldronlab/MyPackage/issues
+Config/roxygen2/version: 8.0.0

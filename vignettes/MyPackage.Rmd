@@ -1,0 +1,39 @@
+---
+title: "Introduction to MyPackage"
+author: "Levi Waldron"
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Introduction to MyPackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+# Introduction
+
+Describe what the package is for and who would use it.
+
+# Installation
+
+```{r install, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("waldronlab/MyPackage")
+```
+
+# Usage
+
+```{r usage}
+library(MyPackage)
+hello("world")
+```
+
+# Session information
+
+```{r sessionInfo}
+sessionInfo()
+```
