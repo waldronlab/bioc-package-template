@@ -26,7 +26,8 @@ This repository is a template for new Waldron Lab R/Bioconductor packages. It pa
 
 | Input | Default | What it does |
 |---|---|---|
-| `error_on` | `warning` | Fail the check on `never`, `note`, `warning` or `error` |
+| `rcmdcheck_error_on` | `warning` | Fail the job when `R CMD check` reports this severity or worse: `never`, `note`, `warning` or `error` |
+| `bioccheck_error_on` | `error` | `error` fails the job on any BiocCheck ERROR; `never` only reports. BiocCheck warnings and notes never fail the job |
 | `enable_pkgdown` | `false` | Build and deploy a pkgdown site to GitHub Pages (also uncomment the `permissions:` block) |
 | `enable_cyclocomp` | `false` | Report each function's cyclomatic complexity as a downloadable artifact |
 | `bioc_version` | from branch | Override the Bioconductor container, e.g. `RELEASE_3_22` |
