@@ -56,4 +56,4 @@ After creating a repository from this template (**Use this template → Create a
 4. **Rewrite this README** for the package, keeping the badge and the installation section.
 5. **Keep `devel` as the default branch**, as Bioconductor does.
 
-Claude needs no setup in `waldronlab`: the Claude GitHub App is installed on all repositories, and the `CLAUDE_CODE_OAUTH_TOKEN` organization secret is passed by `secrets: inherit`. Remove the `review` job from `claude.yml` to turn off automatic reviews.
+Claude needs no setup in `waldronlab`: the Claude GitHub App is installed on all repositories, and `claude.yml` passes the `CLAUDE_CODE_OAUTH_TOKEN` organization secret by name. Remove the `review` job from `claude.yml` to turn off automatic reviews. `review_focus` appears in both jobs, so that `@claude review` gets the same instructions as the automatic review; edit both together.

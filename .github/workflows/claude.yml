@@ -22,7 +22,13 @@ jobs:
       id-token: write
       actions: read
     uses: waldronlab/.github/.github/workflows/claude.yml@devel
-    secrets: inherit
+    # Passed by name: `secrets: inherit` doesn't reach the reusable workflow
+    # from repositories outside the waldronlab organization.
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    with:
+      # Also used by `@claude review`; keep it the same as in the review job.
+      review_focus: "This is a Bioconductor package: check that exported functions are documented and that new code follows Bioconductor guidelines."
   review:
     if: github.event_name == 'pull_request'
     permissions:
@@ -30,6 +36,7 @@ jobs:
       pull-requests: write
       id-token: write
     uses: waldronlab/.github/.github/workflows/claude-review.yml@devel
-    secrets: inherit
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     with:
       review_focus: "This is a Bioconductor package: check that exported functions are documented and that new code follows Bioconductor guidelines."
